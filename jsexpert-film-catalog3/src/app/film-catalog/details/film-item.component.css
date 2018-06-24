@@ -1,0 +1,29 @@
+.example-card {
+    max-width: 300px;
+    flex-wrap: wrap;
+  }
+
+.example-card img {
+  width: 21vw;
+}
+.example-card img:hover {
+  transform: scale(1.05);
+  transition: all 0.5s; 
+}
+
+.filmName { 
+  display: flex;
+  justify-content: center;
+}
+
+.example-card:hover {
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+.card-description {
+  height: 80px;
+  overflow: hidden;
+}
+
+.pressed {
+  background-color: #888;
+}
