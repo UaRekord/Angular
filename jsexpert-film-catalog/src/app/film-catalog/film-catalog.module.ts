@@ -19,8 +19,8 @@ import {MatTabsModule} from '@angular/material/tabs';
     MatTabsModule
   ],
   declarations: [
-    MainComponent, 
-    FilmsComponent, 
+    MainComponent,
+    FilmsComponent,
     DetailsComponent
   ]
 })

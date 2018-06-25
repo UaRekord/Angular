@@ -3,22 +3,22 @@ import { FilmService } from '../film.service';
 
 
 @Component({
-  selector: '.films',
+  selector: 'app-films',
   templateUrl: './films.component.html',
   styleUrls: ['./films.component.css']
 })
 export class FilmsComponent implements OnInit {
 
-  description: string = 'Middle card description';
-  films : Object[] = [];
-  
-  constructor(filmsService: FilmService) { 
-    this.films = filmsService.films;
+  description = 'Middle card description';
+  films: Object[] = [];
+
+  constructor(public filmsService: FilmService) {
+    this.films = this.filmsService.films;
+
   }
-  
-  ngOnInit() { 
-    
+
+  ngOnInit() {
+
   }
-  
-  
+
 }

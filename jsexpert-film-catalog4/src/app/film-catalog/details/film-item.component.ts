@@ -12,7 +12,7 @@ export class FilmItemComponent implements OnInit {
   @Input() film: object;
   @Input() films: Array<IFilm>;
   @Output() favorite =  new EventEmitter<number>();
-
+   bgc = false;
   constructor() {
   }
 

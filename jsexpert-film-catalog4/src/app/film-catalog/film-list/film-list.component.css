@@ -1,0 +1,13 @@
+mat-form-field {
+  position: absolute;
+  right: 5%;
+  top: 10%;
+  width: 25vw;
+}
+
+.search-film {
+  margin-left: 50px;
+  font-size: 20px;
+  border: none;
+  border-bottom: solid 1px;
+}
