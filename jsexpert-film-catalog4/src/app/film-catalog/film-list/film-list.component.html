@@ -4,7 +4,7 @@
       <mat-toolbar-row>
         <span>В избранное добавлено: {{counter}}</span>
         <span class="example-spacer"></span>
-        <input matInput placeholder="Поиск фильма" value="" class="search-film">
+        <input matInput placeholder="Поиск фильма" class="search-film" type="text" [(ngModel)]="name" (ngModelChange)="searchFilm(name)">
           <div>            
               <mat-form-field> <!--* тут ngModel, потому что не хотел отдельно к каждой опции
                 прикручивать событие, тем более их в теории может быть ну очень много. 
@@ -20,8 +20,8 @@
 
 </mat-card><!--* тут я передаю отдельно каждый элемент массива  -->
  <mat-grid-list cols="3" rowHeight="3:5">
-  <mat-grid-tile *ngFor="let film of films"> 
-    <app-film-item [film]="film" [films]="films" (favorite)="setUpdatedValue($event)"></app-film-item>
+  <mat-grid-tile *ngFor="let film of films; trackBy: trackByFn;"> 
+    <app-film-item [film]="film" [films]="films" (favorite)="setCounterValue($event)"></app-film-item>
   </mat-grid-tile>
  </mat-grid-list>
-
+ <button mat-button class="more" (click)="getNextPage()" [disabled]="isDisabled">Загрузить еще</button>

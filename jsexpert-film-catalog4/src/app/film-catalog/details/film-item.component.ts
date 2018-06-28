@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { IFilm } from '../shared/i-film';
+import { Film } from '../shared/i-film';
 
 @Component({
   selector: 'app-film-item',
@@ -10,9 +10,9 @@ import { IFilm } from '../shared/i-film';
 export class FilmItemComponent implements OnInit {
 
   @Input() film: object;
-  @Input() films: Array<IFilm>;
+  @Input() films: Film[];
   @Output() favorite =  new EventEmitter<number>();
-   bgc = false;
+
   constructor() {
   }
 

@@ -11,3 +11,10 @@ mat-form-field {
   border: none;
   border-bottom: solid 1px;
 }
+
+.more {
+  display: block;
+  margin: 0 auto;
+  margin-top: 20px;
+  background-color: #888;
+}
