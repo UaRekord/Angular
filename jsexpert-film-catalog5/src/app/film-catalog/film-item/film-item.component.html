@@ -1,0 +1,16 @@
+
+  <mat-card class="example-card">
+    <mat-card-header class="filmName">
+      <mat-card-title><h4>{{film.title}}</h4></mat-card-title>
+      <mat-card-subtitle>{{film.release_date}}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src={{imgPath+film.poster_path}} alt="Poster">
+    <mat-card-content class="card-description">
+      <p>
+            {{film.overview}}
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button (click)="setFavorite(film.id)" [ngClass]="{pressed: this.filmsService.isFavorite(film.id, this.favorite, 'favorites')}">НРАВИТСЯ</button>
+    </mat-card-actions>
+  </mat-card>

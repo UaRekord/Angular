@@ -13,7 +13,7 @@ export class FilmsComponent implements OnInit {
   name: string;
   count = 1;
   filmsPerPage = 3;
-  allFilms: Film[] = this.filmsService.getFilms();
+  allFilms: Film[] = [];
   films: Film[];
   isDisabled = false;
 
@@ -21,6 +21,7 @@ export class FilmsComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.allFilms = this.filmsService.getFilms();
     this.films = this.allFilms.slice(0, this.filmsPerPage * this.count);
     this.counter = this.updateCounter();
   }
