@@ -1,0 +1,19 @@
+<mat-card class="menu-card">
+  <mat-toolbar class="menu-toolbar">
+      <mat-toolbar-row>
+        <span>В избранное добавлено: </span>
+        <span class="example-spacer"></span>
+        <input matInput placeholder="Поиск" class="search-film" type="text" [(ngModel)]="name" (ngModelChange)="setToParent(name)">
+        <div>            
+              <mat-form-field> <!--* тут ngModel, потому что не хотел отдельно к каждой опции
+                прикручивать событие, тем более их в теории может быть ну очень много. 
+                не знаю правильно или нет я поменял в макете, мне так было проще --> 
+                <mat-select placeholder="Сортировка" (selectionChange)="sorting(value)" [(ngModel)]="value" disabled>
+                  <mat-option value="ACS">Фильмы</mat-option>
+                  <mat-option value="DESC">Актеры</mat-option>
+                </mat-select>
+              </mat-form-field>
+          </div>
+      </mat-toolbar-row>
+  </mat-toolbar>
+</mat-card>
