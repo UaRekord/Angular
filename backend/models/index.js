@@ -1,5 +1,5 @@
 const filmFavoriteModel = require('./filmfav');
-const userModel = require('./users');
+const userModel = require('./user');
 const actorsFavoriteModel = require('./actfav');
 
 module.exports = filmFavoriteModel,

@@ -4,20 +4,19 @@ const Schema = mongoose.Schema;
 const userSchema = new Schema({
     email: {
         type: String,
-        required: [true],
-        unique: true,
+        required: true,
+        unique: true
     },
-    profile: {
-        fullName: {
-            type: String,
-        },
-    },
+    password: {
+        type: String,
+        required: true
+    }
 });
 
 
 userSchema.plugin(passwordLocalMongoose, {
     usernameField: 'email'
 });
-const User = mongoose.model('user', userSchema);
+const User = mongoose.model('users', userSchema);
 
 module.exports = User;

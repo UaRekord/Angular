@@ -2,7 +2,10 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const actorsFavoriteSchema = new Schema({
     _id: Number,
-    user: String,
+    user: {
+        ref: 'users',
+        type: Schema.Types.ObjectId
+    },
     favorite: Boolean
 });
 

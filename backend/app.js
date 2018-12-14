@@ -1,5 +1,6 @@
 const createError = require('http-errors');
 const express = require('express');
+const passport = require('passport');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
@@ -18,6 +19,8 @@ mongoManager.connect();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
+app.use(passport.initialize());
+require('./middleware/passport')(passport);
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
